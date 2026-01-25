@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Studio | Strategic Business & IT Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET & BASICS --- */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Open Sans', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color:#333; overflow-x: hidden; background-color: #fff; }
+        a { text-decoration:none; color:inherit; transition:0.3s; }
+        ul { list-style:none; }
+
+        /* --- VARIABLES --- */
+        :root {
+            --primary-yellow: #FFC20E; 
+            --dark-text: #232323;
+            --nav-link-color: #002A50;
+            --light-bg: #f8f9fa;
+            --hero-overlay: rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav.main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--nav-link-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .logo span { color: var(--primary-yellow); }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--nav-link-color);
+        }
+
+        .nav-links a:hover { color: var(--primary-yellow); }
+
+        .btn-contact {
+            background-color: var(--primary-yellow);
+            color: var(--nav-link-color);
+            padding: 10px 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-radius: 2px;
+        }
+        
+        .btn-contact:hover { background-color: #e0aa0c; }
+
+        /* --- HERO SECTION --- */
+        header.hero {
+            background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?fit=crop&w=1600&q=80') no-repeat center center/cover;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content { max-width: 800px; }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .btn-hero {
+            background-color: var(--primary-yellow);
+            color: var(--nav-link-color);
+            padding: 15px 35px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 2px;
+            display: inline-block;
+        }
+        
+        .btn-hero:hover { background-color: #e0aa0c; }
+
+        /* --- SECONDARY SUB-NAV --- */
+        .sub-nav {
+            background-color: #f3f3f3;
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sub-nav ul {
+            display: flex;
+            gap: 30px;
+            font-size: 0.95rem;
+            color: #002A50;
+        }
+        
+        .sub-nav li a:hover { color: var(--primary-yellow); text-decoration: underline; }
+
+        /* --- SECTIONS --- */
+        section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+        
+        h2 { text-align: center; color: var(--nav-link-color); margin-bottom: 40px; font-size: 2.2rem; }
+        
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
+        
+        .service-card {
+            border: 1px solid #eee; padding: 40px 30px; text-align: center;
+            transition: 0.3s; background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Yellow top border effect */
+        .service-card::before {
+            content: ''; position: absolute; top:0; left:0; right:0; height: 5px; 
+            background: var(--primary-yellow); transform: scaleX(0); transition: 0.3s;
+        }
+
+        .service-card:hover { 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+            transform: translateY(-5px); 
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+
+        .service-card i { font-size: 2.5rem; color: var(--nav-link-color); margin-bottom: 20px; }
+        .service-card h3 { color: var(--nav-link-color); margin-bottom: 15px; font-size: 1.3rem; }
+
+        /* --- CONTACT FORM SECTION --- */
+        .contact-container {
+            background-color: var(--light-bg);
+            padding: 60px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        form {
+            max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;
+        }
+        
+        input, textarea {
+            padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; width: 100%;
+        }
+        
+        .form-btn {
+            background-color: var(--nav-link-color);
+            color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase;
+        }
+        .form-btn:hover { background-color: var(--primary-yellow); color: var(--nav-link-color); }
+
+        /* --- FLOATING AI SEARCH BAR --- */
+        .ai-search-container {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 700px; z-index: 2000;
+        }
+        
+        .ai-search-bar {
+            width: 100%; background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            border-radius: 50px; padding: 10px 25px;
+            display: flex; align-items: center;
+        }
+
+        .ai-search-bar input {
+            border: none; outline: none; width: 100%; font-size: 1rem; color: #555;
+            padding: 5px 10px; margin-bottom: 0; /* Override input default */
+        }
+
+        .ai-send-btn {
+            background: var(--nav-link-color); color: white; width: 45px; height: 45px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: 0.2s; min-width: 45px;
+        }
+        .ai-send-btn:hover { background: var(--primary-yellow); color: black; }
+
+        /* Footer */
+        footer { background:#232323; color:white; padding:40px; text-align:center; margin-top: 50px; }
+
+        /* Responsive */
+        @media(max-width: 900px) {
+            .nav-links { display: none; } 
+            .hero h1 { font-size: 2.2rem; }
+            .sub-nav { overflow-x: auto; white-space: nowrap; }
+            .ai-search-container { bottom: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="#" class="logo">
+            <span>((</span> AKASH STUDIO <span>))</span>
+        </a>
+        <div class="nav-links">
+            <a href="#services">Our Services</a>
+            <a href="#about">About</a>
+            <a href="mailto:hello@akashstudio.co.in">Email Us</a>
+            <a href="#contact" class="btn-contact">CONTACT US</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Strategic Business &<br>IT Solutions</h1>
+            <p>Together we can envision, inspire and transform your business with tailored strategies and digital tools.</p>
+            
+            <a href="mailto:hello@akashstudio.co.in?subject=Consultation Request&body=Hi Akash Studio, I am interested in your services." class="btn-hero">
+                TALK TO AN EXPERT
+            </a>
+        </div>
+    </header>
+
+    <div class="sub-nav">
+        <ul>
+            <li><a href="#home">Overview</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#contact">Book Consultation</a></li>
+            <li><a href="mailto:hello@akashstudio.co.in">Support</a></li>
+        </ul>
+    </div>
+
+    <section id="services">
+        <h2>Our Expertise</h2>
+        <div class="services">
+            
+            <div class="service-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Business Consultancy</h3>
+                <p>Strategic planning and operational improvement solutions to unlock your company's full potential.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>IT Services & Dev</h3>
+                <p>Custom software, responsive website development, and cloud integration for modern businesses.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-search-dollar"></i>
+                <h3>SaaS & Tool Reviews</h3>
+                <p>Expert software recommendations to help you choose the right tools, saving time and money.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Digital Transformation</h3>
+                <p>Modernize workflows, automate manual processes, and adopt AI tools to boost efficiency.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" style="background-color: white;">
+        <h2>About Akash Studio</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+            We combine strategic business consultancy with cutting-edge IT/SaaS expertise. Whether you need to streamline operations, build a new digital product, or find the perfect software stack, we are your partners in growth.
+        </p>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p style="margin-bottom: 30px;">Fill out the form below or email us at <strong>hello@akashstudio.co.in</strong></p>
+            
+            <form action="https://formsubmit.co/hello@akashstudio.co.in" method="POST">
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html"> 
+                <input type="hidden" name="_subject" value="New Lead from Website!">
+                
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <input type="text" name="phone" placeholder="Phone Number (Optional)">
+                <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                
+                <button type="submit" class="form-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="ai-search-container">
+        <div class="ai-search-bar">
+            <i class="fas fa-search" style="color:#888; margin-right:10px;"></i>
+            <input type="text" id="aiInput" placeholder="Ask us: What is your pricing model?">
+            <div class="ai-send-btn" onclick="sendInquiry()">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Akash Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to handle the AI Search Bar
+        function sendInquiry() {
+            const input = document.getElementById('aiInput').value;
+            if(input.trim() === "") {
+                alert("Please type a question first!");
+                return;
+            }
+            
+            // This opens the email client with the user's question pre-filled
+            const subject = "Quick Question from Website";
+            const body = "Hi Akash Studio, I have a question: " + input;
+            
+            window.location.href = `mailto:hello@akashstudio.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Clear input after sending
+            document.getElementById('aiInput').value = "";
+        }
+
+        // Allow pressing "Enter" to send
+        document.getElementById('aiInput').addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                sendInquiry();
+            }
+        });
+    </script>
+
+</body>
+</html>
