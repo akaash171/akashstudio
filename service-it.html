@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Services | Akash Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Open Sans', sans-serif; }
+        body { color:#333; line-height: 1.6; background-color: #fff; }
+        a { text-decoration:none; color:inherit; }
+        :root { --primary-yellow: #FFC20E; --nav-link-color: #002A50; }
+
+        nav { padding: 20px 40px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        .back-btn { font-weight: 700; color: var(--nav-link-color); }
+        .back-btn:hover { color: var(--primary-yellow); }
+
+        header.service-hero { background: var(--nav-link-color); color: white; padding: 80px 40px; text-align: center; }
+        header h1 { font-size: 3rem; margin-bottom: 20px; }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+        
+        h2 { color: var(--nav-link-color); font-size: 2rem; margin-bottom: 20px; margin-top: 40px; border-left: 5px solid var(--primary-yellow); padding-left: 15px; }
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #555; }
+        
+        .tech-stack { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+        .tech-badge { background: #eee; padding: 8px 15px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; color: #333; }
+
+        .case-study-box { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .case-study-box h3 { color: var(--nav-link-color); margin-bottom: 15px; }
+        .result-highlight { color: #27ae60; font-weight: 800; font-size: 1.2rem; margin-top: 10px; display: block; }
+
+        .cta-section { text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee; }
+        .btn { background: var(--primary-yellow); color: var(--nav-link-color); padding: 15px 40px; font-weight: 800; border-radius: 4px; display: inline-block; }
+        .btn:hover { background: #e0aa0c; }
+        
+        @media(max-width: 700px) { header h1 { font-size: 2rem; } .container { padding: 40px 20px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img src="logo.png" alt="Akash Studio"></a>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </nav>
+
+    <header class="service-hero">
+        <h1>IT Services & Custom Development</h1>
+        <p>Scalable, secure, and high-performance software tailored to your specific intellectual property needs.</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Technical Approach</h2>
+        <p>We advocate for a <strong>Microservices Architecture</strong> over monolithic structures, ensuring your application is scalable and easy to update. We practice <strong>CI/CD (Continuous Integration/Deployment)</strong> pipelines to ensure bug-free code delivery. Security is paramount, adhering to OWASP standards.</p>
+        
+        <div class="tech-stack">
+            <span class="tech-badge">React.js</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">AWS Lambda</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">PostgreSQL</span>
+        </div>
+
+        <h2>Case Study: Fintech Web Portal</h2>
+        <div class="case-study-box">
+            <h3>Automating Loan Processing for a Startup</h3>
+            <p><strong>The Challenge:</strong> A finance startup was processing loan applications manually via Excel, limiting them to 10 clients/day with frequent data errors.</p>
+            <p><strong>The Solution:</strong> We built a custom web portal using React and Node.js with an automated credit-check API integration and a secure database.</p>
+            <span class="result-highlight">✔ Result: Scaled processing capacity to 500+ clients/day.</span>
+        </div>
+
+        <div class="cta-section">
+            <h2>Need custom software?</h2>
+            <a href="index.html#contact" class="btn">Book Your Consultation</a>
+        </div>
+    </div>
+</body>
+</html>

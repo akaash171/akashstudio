@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Audits | Akash Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Open Sans', sans-serif; }
+        body { color:#333; line-height: 1.6; background-color: #fff; }
+        a { text-decoration:none; color:inherit; }
+        :root { --primary-yellow: #FFC20E; --nav-link-color: #002A50; }
+
+        nav { padding: 20px 40px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        .back-btn { font-weight: 700; color: var(--nav-link-color); }
+        .back-btn:hover { color: var(--primary-yellow); }
+
+        header.service-hero { background: var(--nav-link-color); color: white; padding: 80px 40px; text-align: center; }
+        header h1 { font-size: 3rem; margin-bottom: 20px; }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+        
+        h2 { color: var(--nav-link-color); font-size: 2rem; margin-bottom: 20px; margin-top: 40px; border-left: 5px solid var(--primary-yellow); padding-left: 15px; }
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #555; }
+        
+        .tech-stack { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+        .tech-badge { background: #eee; padding: 8px 15px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; color: #333; }
+
+        .case-study-box { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .case-study-box h3 { color: var(--nav-link-color); margin-bottom: 15px; }
+        .result-highlight { color: #27ae60; font-weight: 800; font-size: 1.2rem; margin-top: 10px; display: block; }
+
+        .cta-section { text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee; }
+        .btn { background: var(--primary-yellow); color: var(--nav-link-color); padding: 15px 40px; font-weight: 800; border-radius: 4px; display: inline-block; }
+        .btn:hover { background: #e0aa0c; }
+        
+        @media(max-width: 700px) { header h1 { font-size: 2rem; } .container { padding: 40px 20px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img src="logo.png" alt="Akash Studio"></a>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </nav>
+
+    <header class="service-hero">
+        <h1>SaaS Audits & Stack Optimization</h1>
+        <p>Eliminate "Subscription Fatigue" and data silos by finding the perfect tool fit for your team.</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Audit Process</h2>
+        <p>We perform a <strong>Gap Analysis</strong> of your current software stack. We evaluate tools based on API flexibility, scalability, and cost-per-user. Our goal is to create a 'Single Source of Truth' (SSOT) data ecosystem where all your tools communicate seamlessly.</p>
+        
+        <div class="tech-stack">
+            <span class="tech-badge">Zapier</span>
+            <span class="tech-badge">Slack API</span>
+            <span class="tech-badge">HubSpot</span>
+            <span class="tech-badge">Notion</span>
+        </div>
+
+        <h2>Case Study: Cost Reduction</h2>
+        <div class="case-study-box">
+            <h3>Reducing Overhead for a Marketing Agency</h3>
+            <p><strong>The Challenge:</strong> The client was paying for Asana, Trello, Slack, Monday.com, and Salesforce, costing $4,000/month, yet data was siloed and staff were confused.</p>
+            <p><strong>The Solution:</strong> We consolidated their workflow into a unified HubSpot + Slack ecosystem, migrating all data and canceling redundant subscriptions.</p>
+            <span class="result-highlight">✔ Result: Saved $28,000/year in subscription costs.</span>
+        </div>
+
+        <div class="cta-section">
+            <h2>Stop overpaying for software.</h2>
+            <a href="index.html#contact" class="btn">Book Your Consultation</a>
+        </div>
+    </div>
+</body>
+</html>

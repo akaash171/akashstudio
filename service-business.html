@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Consultancy | Akash Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Open Sans', sans-serif; }
+        body { color:#333; line-height: 1.6; background-color: #fff; }
+        a { text-decoration:none; color:inherit; }
+        :root { --primary-yellow: #FFC20E; --nav-link-color: #002A50; }
+
+        nav { padding: 20px 40px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        .back-btn { font-weight: 700; color: var(--nav-link-color); }
+        .back-btn:hover { color: var(--primary-yellow); }
+
+        header.service-hero { background: var(--nav-link-color); color: white; padding: 80px 40px; text-align: center; }
+        header h1 { font-size: 3rem; margin-bottom: 20px; }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+        
+        h2 { color: var(--nav-link-color); font-size: 2rem; margin-bottom: 20px; margin-top: 40px; border-left: 5px solid var(--primary-yellow); padding-left: 15px; }
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #555; }
+        
+        .tech-stack { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+        .tech-badge { background: #eee; padding: 8px 15px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; color: #333; }
+
+        .case-study-box { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .case-study-box h3 { color: var(--nav-link-color); margin-bottom: 15px; }
+        .result-highlight { color: #27ae60; font-weight: 800; font-size: 1.2rem; margin-top: 10px; display: block; }
+
+        .cta-section { text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee; }
+        .btn { background: var(--primary-yellow); color: var(--nav-link-color); padding: 15px 40px; font-weight: 800; border-radius: 4px; display: inline-block; }
+        .btn:hover { background: #e0aa0c; }
+        
+        /* Mobile */
+        @media(max-width: 700px) { header h1 { font-size: 2rem; } .container { padding: 40px 20px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img src="logo.png" alt="Akash Studio"></a>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </nav>
+
+    <header class="service-hero">
+        <h1>Strategic Business Consultancy</h1>
+        <p>We leverage data to identify operational bottlenecks and build a roadmap for sustainable revenue growth.</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Methodology</h2>
+        <p>We don't rely on gut feelings. We utilize <strong>Six Sigma principles</strong> and <strong>Business Process Modeling Notation (BPMN)</strong> to map your current workflows down to the minute. By integrating data visualization tools, we turn raw operational data into actionable insights.</p>
+        
+        <div class="tech-stack">
+            <span class="tech-badge">Tableau</span>
+            <span class="tech-badge">PowerBI</span>
+            <span class="tech-badge">Jira</span>
+            <span class="tech-badge">SWOT Analysis</span>
+        </div>
+
+        <h2>Case Study: Logistics Optimization</h2>
+        <div class="case-study-box">
+            <h3>Optimizing Supply Chain for a Logistics Firm</h3>
+            <p><strong>The Challenge:</strong> A mid-sized logistics company was losing 15% of annual revenue due to inefficient route planning and inventory mismanagement.</p>
+            <p><strong>The Solution:</strong> We implemented a centralized dashboard using PowerBI to track fleet movement in real-time and restructured their inventory logic using Just-In-Time (JIT) principles.</p>
+            <span class="result-highlight">✔ Result: Reduced operational waste by 22% in 3 months.</span>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to streamline your business?</h2>
+            <a href="index.html#contact" class="btn">Book Your Consultation</a>
+        </div>
+    </div>
+</body>
+</html>
