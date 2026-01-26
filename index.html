@@ -92,10 +92,9 @@
         }
         .process-step h3 { margin-bottom: 10px; color: var(--nav-link-color); }
 
-        /* --- SERVICES SECTION (LINKS TO NEW PAGES) --- */
+        /* --- SERVICES SECTION --- */
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
         
-        /* This makes the whole card clickable */
         .service-card {
             display: block; 
             border: 1px solid #eee; padding: 40px 30px; text-align: center;
@@ -121,7 +120,6 @@
         .founder-section { display: flex; align-items: center; gap: 60px; background-color: white; }
         .founder-img { flex: 1; text-align: center; }
         
-        /* Photo Frame Fix */
         .founder-img img { 
             width: 100%; max-width: 400px;
             border: 10px solid var(--primary-yellow); border-radius: 5px; 
@@ -129,7 +127,6 @@
         }
 
         .founder-text { flex: 1.2; }
-        /* Text Align Fix */
         .founder-text h2 { text-align: left; }
         .founder-text h2::after { margin: 15px 0 0; }
         .founder-text h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--nav-link-color); }
@@ -148,10 +145,7 @@
         /* --- REVIEW SECTION --- */
         .review-section { background: white; text-align: center; }
         .review-form { max-width: 600px; margin: 0 auto; background: var(--light-bg); padding: 40px; border-radius: 8px; border: 1px solid #eee; }
-        
-        .review-form select {
-            width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #555; margin-bottom: 15px; background: white;
-        }
+        .review-form select { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #555; margin-bottom: 15px; background: white; }
 
         /* --- CONTACT FORM --- */
         .contact-container { background-color: var(--nav-link-color); color: white; padding: 60px; border-radius: 5px; text-align: center; }
@@ -193,6 +187,7 @@
             <a href="#services">Services</a>
             <a href="#process">How We Work</a>
             <a href="#reviews">Reviews</a>
+            
             <a href="#contact" class="btn-contact">Book Consultation</a>
         </div>
     </nav>
@@ -202,7 +197,9 @@
             <h1>Strategic Business &<br>IT Solutions</h1>
             <p>We transform complex business challenges into streamlined digital success stories.</p>
             <div class="btn-group">
-                <a href="#contact" class="btn-hero">Book Free Discovery Call</a>
+                
+                <a href="https://calendly.com" target="_blank" class="btn-hero">Book Free Discovery Call</a>
+                
                 <a href="#services" class="btn-outline">Explore Services</a>
             </div>
         </div>
@@ -232,35 +229,30 @@
     <section id="services" style="background-color: #fff;">
         <h2 data-aos="fade-up">Our Expertise</h2>
         <div class="services">
-            
             <a href="service-business.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-briefcase"></i>
                 <h3>Business Consultancy</h3>
                 <p>Strategic planning and operational improvement solutions to unlock your company's full potential.</p>
                 <span class="learn-more">View Case Study ➝</span>
             </a>
-
             <a href="service-it.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-laptop-code"></i>
                 <h3>IT Services & Dev</h3>
                 <p>Custom software, responsive website development, and cloud integration for modern businesses.</p>
                 <span class="learn-more">View Case Study ➝</span>
             </a>
-
             <a href="service-saas.html" class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-search-dollar"></i>
                 <h3>SaaS & Tool Reviews</h3>
                 <p>Expert software recommendations to help you choose the right tools, saving time and money.</p>
                 <span class="learn-more">View Case Study ➝</span>
             </a>
-
             <a href="service-digital.html" class="service-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-rocket"></i>
                 <h3>Digital Transformation</h3>
                 <p>Modernize workflows, automate manual processes, and adopt AI tools to boost efficiency.</p>
                 <span class="learn-more">View Case Study ➝</span>
             </a>
-
         </div>
     </section>
 
@@ -275,12 +267,13 @@
                     <span>CEO, TechFlow India</span>
                 </div>
             </div>
+            
             <div class="testi-card" data-aos="zoom-in-up" data-aos-delay="100">
                 <div class="stars">★★★★★</div>
-                <p class="testi-text">"The blend of business knowledge and IT skills is rare. They didn't just build a website; they built a lead generation machine for us."</p>
+                <p class="testi-text">"Akash Studio transformed our <strong>online booking engine</strong>. Since the update, our <strong>international holiday packages</strong> have seen a 40% increase in inquiries. Best tech partner for travel agencies!"</p>
                 <div class="client-info">
-                    <h4>Sarah Jenkins</h4>
-                    <span>Founder, Creative Solutions</span>
+                    <h4>Vikram Malhotra</h4>
+                    <span style="font-size: 0.9rem; color: #888;">Founder, <a href="https://www.dreamtravels.com" target="_blank" style="color: var(--nav-link-color); text-decoration: underline; font-weight: bold;">Dream Travels World</a></span>
                 </div>
             </div>
         </div>
@@ -289,15 +282,12 @@
     <section class="review-section">
         <h2 data-aos="fade-up">Leave a Review</h2>
         <p style="margin-bottom: 30px; text-align: center;">Worked with us? Share your experience.</p>
-        
         <div class="review-form" data-aos="fade-up">
             <form action="https://formsubmit.co/hello@akashstudio.co.in" method="POST">
                 <input type="hidden" name="_next" value="https://www.akashstudio.co.in/thankyou.html">
                 <input type="hidden" name="_subject" value="New Review Submitted!">
                 <input type="hidden" name="_captcha" value="false">
-
                 <input type="text" name="reviewer_name" placeholder="Your Name" required>
-                
                 <select name="rating" required>
                     <option value="" disabled selected>Select Rating</option>
                     <option value="5 Stars">★★★★★ (Excellent)</option>
@@ -306,9 +296,7 @@
                     <option value="2 Stars">★★☆☆☆ (Fair)</option>
                     <option value="1 Star">★☆☆☆☆ (Poor)</option>
                 </select>
-
                 <textarea name="review_text" rows="4" placeholder="Write your review here..." required></textarea>
-                
                 <button type="submit" class="form-btn">SUBMIT REVIEW</button>
             </form>
         </div>
@@ -358,7 +346,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, offset: 100 });
-
         function sendInquiry() {
             const input = document.getElementById('aiInput').value;
             if(input.trim() === "") { alert("Please type a question first!"); return; }
