@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akash Studio | Strategic Business & IT Solutions</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -89,9 +92,10 @@
         }
         .process-step h3 { margin-bottom: 10px; color: var(--nav-link-color); }
 
-        /* --- SERVICES SECTION --- */
+        /* --- SERVICES SECTION (LINKS TO NEW PAGES) --- */
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
         
+        /* This makes the whole card clickable */
         .service-card {
             display: block; 
             border: 1px solid #eee; padding: 40px 30px; text-align: center;
@@ -117,6 +121,7 @@
         .founder-section { display: flex; align-items: center; gap: 60px; background-color: white; }
         .founder-img { flex: 1; text-align: center; }
         
+        /* Photo Frame Fix */
         .founder-img img { 
             width: 100%; max-width: 400px;
             border: 10px solid var(--primary-yellow); border-radius: 5px; 
@@ -124,6 +129,7 @@
         }
 
         .founder-text { flex: 1.2; }
+        /* Text Align Fix */
         .founder-text h2 { text-align: left; }
         .founder-text h2::after { margin: 15px 0 0; }
         .founder-text h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--nav-link-color); }
@@ -266,15 +272,15 @@
                 <p class="testi-text">"Akash Studio completely revamped our internal workflow. We saved 20+ hours a week thanks to their automation strategy. Highly recommended!"</p>
                 <div class="client-info">
                     <h4>Rahul Verma</h4>
-                    <span>Project Manager, TCS</span>
+                    <span>CEO, TechFlow India</span>
                 </div>
             </div>
             <div class="testi-card" data-aos="zoom-in-up" data-aos-delay="100">
                 <div class="stars">★★★★★</div>
                 <p class="testi-text">"The blend of business knowledge and IT skills is rare. They didn't just build a website; they built a lead generation machine for us."</p>
                 <div class="client-info">
-                    <h4>Joginder Singh</h4>
-                    <span>Founder, Singh Travels</span>
+                    <h4>Sarah Jenkins</h4>
+                    <span>Founder, Creative Solutions</span>
                 </div>
             </div>
         </div>
