@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Infrastructure Audit | Akash Studio Consultancy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FFC20E;
+            --navy: #002A50;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text-gray: #64748b;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.7; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        
+        /* HEADER */
+        .header { text-align: center; margin-bottom: 60px; }
+        .header i { font-size: 3.5rem; color: var(--navy); margin-bottom: 20px; }
+        h1 { font-size: 3rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+        .tagline { color: var(--navy); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
+
+        /* AUDIT CARD */
+        .content-card { background: white; padding: 45px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 40px; border-top: 6px solid var(--primary); }
+        h2 { color: var(--navy); margin-bottom: 20px; font-size: 1.8rem; font-weight: 800; }
+        p { margin-bottom: 20px; color: var(--text-gray); font-size: 1.1rem; }
+
+        /* PROCESS STEPS */
+        .process-grid { display: grid; gap: 25px; margin-top: 30px; }
+        .step { display: flex; gap: 20px; align-items: flex-start; background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .step-num { background: var(--navy); color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; }
+        .step-content h4 { color: var(--navy); margin-bottom: 5px; font-weight: 700; }
+        .step-content p { font-size: 0.95rem; margin-bottom: 0; }
+
+        /* CTA BOX */
+        .cta-box { background: var(--navy); color: white; padding: 40px; border-radius: 20px; text-align: center; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); }
+        .cta-box p { color: rgba(255,255,255,0.8); }
+
+        /* BACK BUTTON */
+        .btn-back { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); text-decoration: none; font-weight: 700; transition: 0.3s; margin-bottom: 30px; }
+        .btn-back:hover { gap: 15px; }
+
+        @media(max-width: 768px) { h1 { font-size: 2.2rem; } .content-card { padding: 30px; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Return to Studio</a>
+
+        <div class="header">
+            <i class="fas fa-search-dollar"></i>
+            <h1>SaaS Infrastructure Audit</h1>
+            <p class="tagline">Stop the Technical Hemorrhage</p>
+        </div>
+
+        <div class="content-card">
+            <h2>Optimize Your Stack</h2>
+            <p>Most enterprises are unaware that **15% to 22% of their IT budget** is wasted on overlapping software, unused seats, and inefficient workflows. We don't just find the waste; we eliminate it.</p>
+            <p>Our deep-dive audit focuses on your core systems—**Zoho, GitHub, WordPress, and Microsoft 365**—to ensure every tool serves a strategic purpose.</p>
+            
+            <div class="process-grid">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Inventory & Gap Analysis</h4>
+                        <p>We map your entire digital footprint to identify "Ghost Subscriptions" and functional overlaps between apps.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Workflow Optimization</h4>
+                        <p>We redesign your data paths to ensure information flows from your CRM to Project Management without manual friction.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Cost & Security Consolidation</h4>
+                        <p>We provide a clear roadmap to cut redundant costs while hardening your data privacy protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Ready for an Efficiency Boost?</h3>
+            <p>Our audits have saved local firms thousands in monthly overhead. Let’s clean up your infrastructure and get you back to high-performance growth.</p>
+        </div>
+    </div>
+
+</body>
+</html>

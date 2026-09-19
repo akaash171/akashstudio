@@ -1,363 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash Studio | Strategic Business & IT Solutions</title>
-    
-    <link rel="icon" type="image/png" href="logo.png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        /* --- RESET & BASICS --- */
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Open Sans', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { color:#333; overflow-x: hidden; background-color: #fff; }
-        a { text-decoration:none; color:inherit; transition:0.3s; }
-        ul { list-style:none; }
-
-        /* --- VARIABLES --- */
-        :root {
-            --primary-yellow: #FFC20E; 
-            --dark-text: #232323;
-            --nav-link-color: #002A50;
-            --light-bg: #f8f9fa;
-            --hero-overlay: rgba(0, 0, 0, 0.6);
-        }
-
-        /* --- NAVIGATION --- */
-        nav.main-nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 40px; background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky; top: 0; z-index: 1000;
-        }
-
-        .logo img { height: 60px; width: auto; display: block; }
-        .nav-links { display: flex; gap: 25px; align-items: center; font-weight: 600; color: var(--nav-link-color); }
-        .nav-links a:hover { color: var(--primary-yellow); }
-
-        .btn-contact {
-            background-color: var(--primary-yellow); color: var(--nav-link-color);
-            padding: 10px 20px; font-weight: 700; text-transform: uppercase;
-            font-size: 0.85rem; border-radius: 2px;
-        }
-        .btn-contact:hover { background-color: #e0aa0c; }
-
-        /* --- HERO SECTION --- */
-        header.hero {
-            background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?fit=crop&w=1600&q=80') no-repeat center center/cover;
-            height: 85vh; display: flex; align-items: center; padding: 0 40px;
-            color: white; position: relative;
-        }
-
-        .hero-content { max-width: 800px; }
-        .hero h1 { font-size: 3.8rem; font-weight: 700; margin-bottom: 20px; line-height: 1.1; }
-        .hero p { font-size: 1.3rem; margin-bottom: 35px; font-weight: 400; opacity: 0.9; }
-
-        .btn-group { display: flex; gap: 15px; }
-
-        .btn-hero {
-            background-color: var(--primary-yellow); color: var(--nav-link-color);
-            padding: 15px 35px; font-weight: 700; text-transform: uppercase;
-            font-size: 0.9rem; border: none; cursor: pointer; border-radius: 2px;
-        }
-        .btn-hero:hover { background-color: #e0aa0c; transform: translateY(-3px); }
-
-        .btn-outline {
-            border: 2px solid white; color: white; background: transparent;
-            padding: 15px 35px; font-weight: 700; text-transform: uppercase;
-            font-size: 0.9rem; cursor: pointer; border-radius: 2px;
-        }
-        .btn-outline:hover { background: white; color: var(--nav-link-color); transform: translateY(-3px); }
-
-        /* --- COMMON SECTIONS --- */
-        section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-        h2 { text-align: center; color: var(--nav-link-color); margin-bottom: 50px; font-size: 2.2rem; position: relative; }
-        h2::after {
-            content: ''; display: block; width: 60px; height: 3px; background: var(--primary-yellow);
-            margin: 15px auto 0;
-        }
-
-        /* --- PROCESS SECTION --- */
-        .process-container { display: flex; justify-content: space-between; gap: 30px; text-align: center; }
-        .process-step { flex: 1; padding: 20px; }
-        .icon-box {
-            width: 80px; height: 80px; background: var(--light-bg); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
-            font-size: 2rem; color: var(--primary-yellow); border: 2px solid #eee;
-        }
-        .process-step h3 { margin-bottom: 10px; color: var(--nav-link-color); }
-
-        /* --- SERVICES SECTION --- */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
-        
-        .service-card {
-            display: block; 
-            border: 1px solid #eee; padding: 40px 30px; text-align: center;
-            transition: 0.3s; background: white; position: relative; overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            cursor: pointer;
-        }
-        .service-card::before {
-            content: ''; position: absolute; top:0; left:0; right:0; height: 5px; 
-            background: var(--primary-yellow); transform: scaleX(0); transition: 0.3s;
-        }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .service-card:hover::before { transform: scaleX(1); }
-        .service-card i { font-size: 2.5rem; color: var(--nav-link-color); margin-bottom: 20px; }
-
-        .learn-more {
-            margin-top: 15px; display: inline-block; font-weight: 700; color: var(--nav-link-color);
-            font-size: 0.9rem; text-transform: uppercase;
-        }
-        .service-card:hover .learn-more { color: var(--primary-yellow); }
-
-        /* --- FOUNDER SECTION --- */
-        .founder-section { display: flex; align-items: center; gap: 60px; background-color: white; }
-        .founder-img { flex: 1; text-align: center; }
-        
-        .founder-img img { 
-            width: 100%; max-width: 400px;
-            border: 10px solid var(--primary-yellow); border-radius: 5px; 
-            box-shadow: none; display: inline-block;
-        }
-
-        .founder-text { flex: 1.2; }
-        .founder-text h2 { text-align: left; }
-        .founder-text h2::after { margin: 15px 0 0; }
-        .founder-text h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--nav-link-color); }
-        .founder-text p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: #555; }
-        .signature { font-family: cursive; font-size: 1.5rem; color: #777; margin-top: 20px; }
-
-        /* --- TESTIMONIALS --- */
-        .testimonials { background-color: var(--light-bg); width: 100vw; max-width: 100%; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .testi-card { background: white; padding: 40px; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .stars { color: var(--primary-yellow); margin-bottom: 15px; }
-        .testi-text { font-style: italic; font-size: 1.1rem; color: #555; margin-bottom: 20px; line-height: 1.6; }
-        .client-info h4 { color: var(--nav-link-color); font-weight: 700; }
-        .client-info span { font-size: 0.9rem; color: #888; }
-
-        /* --- REVIEW SECTION --- */
-        .review-section { background: white; text-align: center; }
-        .review-form { max-width: 600px; margin: 0 auto; background: var(--light-bg); padding: 40px; border-radius: 8px; border: 1px solid #eee; }
-        .review-form select { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #555; margin-bottom: 15px; background: white; }
-
-        /* --- CONTACT FORM --- */
-        .contact-container { background-color: var(--nav-link-color); color: white; padding: 60px; border-radius: 5px; text-align: center; }
-        .contact-container h2 { color: white; }
-        form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        input, textarea { padding: 15px; border: none; border-radius: 2px; font-size: 1rem; width: 100%; }
-        .form-btn {
-            background-color: var(--primary-yellow); color: var(--nav-link-color);
-            padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s;
-        }
-        .form-btn:hover { background-color: white; }
-
-        /* --- AI SEARCH --- */
-        .ai-search-container { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 700px; z-index: 2000; }
-        .ai-search-bar { width: 100%; background: white; border: 1px solid #ddd; box-shadow: 0 10px 40px rgba(0,0,0,0.2); border-radius: 50px; padding: 10px 25px; display: flex; align-items: center; }
-        .ai-search-bar input { border: none; outline: none; width: 100%; font-size: 1rem; color: #555; padding: 5px 10px; }
-        .ai-send-btn { background: var(--nav-link-color); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; min-width: 45px; }
-
-        footer { background:#1a1a1a; color:white; padding:40px; text-align:center; }
-
-        @media(max-width: 900px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .founder-section { flex-direction: column; }
-            .founder-img img { max-width: 100%; }
-            .founder-text h2 { text-align: center; } 
-            .founder-text h2::after { margin: 15px auto 0; }
-            .btn-group { flex-direction: column; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akash Studio helps businesses build AI solutions, SaaS products and reliable digital systems through strategy and engineering.">
+  <meta name="theme-color" content="#07111f">
+  <title>Akash Studio | AI, SaaS & Digital Engineering</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root{--ink:#07111f;--navy:#0b1f35;--blue:#1d5cff;--cyan:#4dd7ff;--gold:#ffc20e;--muted:#667085;--line:#e7ebf0;--soft:#f6f8fb;--white:#fff;--radius:22px;--shadow:0 20px 60px rgba(7,17,31,.10)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Manrope,Arial,sans-serif;color:var(--ink);line-height:1.65;background:var(--white);overflow-x:hidden}a{text-decoration:none;color:inherit}.container{width:min(1160px,calc(100% - 40px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}.eyebrow:before{content:'';width:22px;height:2px;background:var(--gold)}h1,h2,h3,h4{line-height:1.15;letter-spacing:-.035em}section{padding:100px 0}.section-head{max-width:700px;margin-bottom:48px}.section-head h2{font-size:clamp(2rem,4vw,3.15rem);margin:14px 0}.section-head p{color:var(--muted);font-size:1.05rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:12px;font-weight:800;border:1px solid transparent;cursor:pointer;transition:.25s}.btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 10px 30px rgba(255,194,14,.20)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,194,14,.28)}.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:#142942;transform:translateY(-2px)}.btn-ghost{border-color:#dbe2ea;color:var(--ink);background:#fff}.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+    /* nav */
+    .topbar{background:var(--ink);color:#d9e4ef;font-size:.78rem}.topbar .container{display:flex;justify-content:space-between;padding:9px 0}.topbar strong{color:#fff}.main-nav{position:sticky;top:0;z-index:3000;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,235,240,.85)}.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}.brand img{height:48px;display:block}.nav-links{display:flex;align-items:center;gap:28px;font-size:.88rem;font-weight:800}.nav-links a{color:#344054}.nav-links a:hover{color:var(--blue)}.nav-cta{padding:11px 16px;border-radius:10px;background:var(--ink);color:#fff!important}.menu-btn{display:none;border:0;background:transparent;font-size:1.35rem;color:var(--ink);cursor:pointer}
+    /* hero */
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(29,92,255,.24),transparent 30%),radial-gradient(circle at 20% 70%,rgba(77,215,255,.10),transparent 28%),var(--ink);color:#fff;padding:92px 0 82px}.hero:after{content:'';position:absolute;inset:auto -10% -50% 35%;height:500px;background:rgba(255,194,14,.06);filter:blur(60px);border-radius:50%}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:1}.hero h1{font-size:clamp(3rem,6vw,5.4rem);max-width:850px;margin:18px 0 24px}.hero h1 span{color:var(--gold)}.hero-copy{max-width:650px;color:#b9c8d8;font-size:1.1rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0}.hero-note{display:flex;gap:22px;flex-wrap:wrap;color:#9fb0c2;font-size:.82rem}.hero-note span{display:flex;align-items:center;gap:8px}.hero-note i{color:#65d6a0}.hero-panel{background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.25)}.panel-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.status{display:inline-flex;align-items:center;gap:8px;color:#b9c8d8;font-size:.78rem}.status i{color:#54d49b;font-size:.55rem}.panel-title{font-size:1.15rem;font-weight:800}.roadmap{display:grid;gap:12px}.roadmap-item{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:14px}.roadmap-icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:rgba(255,194,14,.12);color:var(--gold)}.roadmap-item strong{display:block;font-size:.9rem}.roadmap-item small{color:#91a3b6}.metric{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;color:#9fb0c2;font-size:.78rem}.metric strong{color:#fff;font-size:1.2rem}
+    /* trust */
+    .trust{padding:26px 0;border-bottom:1px solid var(--line)}.trust-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}.trust-label{color:#98a2b3;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.trust-items{display:flex;gap:30px;flex-wrap:wrap;color:#475467;font-weight:800;font-size:.88rem}.trust-items span{display:flex;gap:8px;align-items:center}.trust-items i{color:var(--blue)}
+    /* cards */
+    .services{background:var(--soft)}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.25s;box-shadow:0 8px 30px rgba(7,17,31,.035)}.service-card:hover{transform:translateY(-6px);border-color:#cdd8e7;box-shadow:var(--shadow)}.service-icon{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:#eef4ff;color:var(--blue);font-size:1.15rem;margin-bottom:24px}.service-card h3{font-size:1.25rem;margin-bottom:12px}.service-card p{color:var(--muted);font-size:.92rem;margin-bottom:22px}.learn{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:800;font-size:.86rem}
+    /* solutions */
+    .solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.solution{padding:34px;border:1px solid var(--line);border-radius:20px;background:#fff;display:flex;gap:18px}.solution-number{font-weight:800;color:#b3bdc9;font-size:.85rem}.solution h3{font-size:1.2rem;margin-bottom:8px}.solution p{color:var(--muted);font-size:.92rem}
+    /* process */
+    .process{background:var(--ink);color:#fff}.process .section-head p{color:#9fb0c2}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}.process-step{padding:30px;background:rgba(255,255,255,.035)}.process-step span{color:var(--gold);font-weight:800;font-size:.78rem}.process-step h3{font-size:1.05rem;margin:24px 0 10px}.process-step p{color:#9fb0c2;font-size:.86rem}
+    /* case study */
+    .case{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}.case-visual{min-height:360px;border-radius:26px;background:linear-gradient(145deg,#0b1f35,#12365c);padding:28px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}.case-badge{align-self:flex-start;background:rgba(255,194,14,.12);color:var(--gold);border:1px solid rgba(255,194,14,.25);padding:8px 12px;border-radius:999px;font-size:.72rem;font-weight:800}.case-visual h3{font-size:2rem;max-width:420px}.case-stat{display:flex;gap:30px}.case-stat strong{font-size:1.7rem;display:block}.case-stat small{color:#9fb0c2}.case-copy h2{font-size:clamp(2rem,4vw,3rem);margin:12px 0 18px}.case-copy>p{color:var(--muted)}.case-points{display:grid;gap:14px;margin:28px 0}.case-points div{display:flex;gap:12px}.case-points i{color:#21b573;margin-top:5px}.case-points p{color:#475467;font-size:.9rem}
+    /* support */
+    .support{background:var(--soft)}.support-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}.support-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px}.support-card h3{font-size:1.4rem;margin-bottom:10px}.support-card>p{color:var(--muted);font-size:.9rem;margin-bottom:22px}.support-form{display:grid;gap:12px}.field{width:100%;padding:13px 14px;border:1px solid #d9e0e8;border-radius:11px;font:inherit;outline:none;background:#fff}.field:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(29,92,255,.08)}textarea.field{resize:vertical}.support-info{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between}.support-info p{color:#9fb0c2}.contact-box{border-top:1px solid rgba(255,255,255,.1);padding-top:20px}.contact-box span{display:block;color:#7f91a5;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}.contact-box a{display:inline-block;color:var(--gold);font-weight:800;margin-top:6px}
+    /* newsletter/footer */
+    .newsletter{padding:76px 0;background:linear-gradient(120deg,#eef5ff,#fff9df)}.newsletter-box{display:flex;align-items:center;justify-content:space-between;gap:30px}.newsletter h2{font-size:2rem}.newsletter p{color:var(--muted);margin-top:8px}.newsletter-form{display:flex;gap:10px;width:min(480px,100%)}.newsletter-form .field{background:#fff}.footer{background:#fff;border-top:1px solid var(--line);padding:70px 0 28px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:55px}.footer-brand img{height:48px}.footer-brand p{color:var(--muted);font-size:.85rem;max-width:330px;margin:18px 0}.footer h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px;color:#475467}.footer ul{list-style:none;display:grid;gap:10px}.footer li,.footer li a{font-size:.85rem;color:#667085}.footer li a:hover{color:var(--blue)}.footer-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:20px;color:#98a2b3;font-size:.75rem}.socials{display:flex;gap:10px}.socials a{width:36px;height:36px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;color:#475467}.socials a:hover{color:var(--blue);border-color:#bfd0ef}
+    /* modal */
+    #consultationModal{display:none;position:fixed;inset:0;background:rgba(3,10,18,.76);backdrop-filter:blur(8px);z-index:5000;align-items:center;justify-content:center;padding:20px}.modal-content{width:min(540px,100%);background:#fff;border-radius:24px;padding:32px;position:relative;box-shadow:0 30px 100px rgba(0,0,0,.35)}.modal-close{position:absolute;right:18px;top:16px;border:0;background:#f2f4f7;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer}.modal-content h2{font-size:1.8rem;margin:8px 0}.modal-content>p{color:var(--muted);font-size:.9rem;margin-bottom:22px}.modal-form{display:grid;gap:12px}.support-input{width:100%;padding:13px 14px;border:1px solid #d9e0e8;border-radius:11px;font:inherit;outline:none}.support-input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(29,92,255,.08)}
+    /* chatbot */
+    #bot-trigger{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border:0;border-radius:18px;background:var(--gold);color:var(--ink);cursor:pointer;z-index:4000;font-size:1.25rem;box-shadow:0 14px 35px rgba(7,17,31,.22)}#bot-window{position:fixed;right:24px;bottom:94px;width:min(390px,calc(100vw - 32px));height:540px;background:#fff;border:1px solid var(--line);border-radius:20px;display:none;flex-direction:column;z-index:4000;overflow:hidden;box-shadow:0 25px 80px rgba(7,17,31,.25)}.bot-head{background:var(--ink);color:#fff;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}.bot-head strong{display:block}.bot-head small{color:#9fb0c2}.bot-close{cursor:pointer;color:#c9d4df}.bot-messages{flex:1;padding:16px;overflow:auto;background:#f7f9fc;display:flex;flex-direction:column;gap:10px}.bot-input-row{padding:12px;border-top:1px solid var(--line);display:flex;gap:8px}.bot-input-row input{min-width:0;flex:1;padding:11px;border:1px solid #d9e0e8;border-radius:10px;outline:none}.bot-input-row button{border:0;background:var(--ink);color:#fff;padding:0 15px;border-radius:10px;font-weight:800;cursor:pointer}.bot-msg-user{align-self:flex-end;background:var(--gold);color:var(--ink);padding:10px 12px;border-radius:14px 14px 4px 14px;max-width:82%;font-size:.86rem}.bot-msg-ai{align-self:flex-start;background:#fff;border:1px solid var(--line);padding:10px 12px;border-radius:14px 14px 14px 4px;max-width:88%;font-size:.86rem}.bot-intel{background:#fff;padding:13px;border-left:3px solid var(--gold);border-radius:10px;font-size:.84rem}
+    @media(max-width:900px){.hero-grid,.case,.support-grid{grid-template-columns:1fr}.hero-panel{max-width:650px}.service-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1.4fr 1fr 1fr}.newsletter-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:700px){.topbar{display:none}.container{width:min(100% - 28px,1160px)}section{padding:76px 0}.nav-inner{height:68px}.brand img{height:42px}.menu-btn{display:block}.nav-links{display:none;position:absolute;left:14px;right:14px;top:74px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:4px}.nav-links.open{display:flex}.nav-links a,.nav-cta{text-align:center;padding:11px}.hero{padding:72px 0}.hero h1{font-size:clamp(2.7rem,13vw,4rem)}.hero-copy{font-size:1rem}.service-grid,.solution-grid,.process-grid,.footer-grid{grid-template-columns:1fr}.newsletter-form{flex-direction:column}.newsletter-form .btn{padding:13px}.footer-bottom{flex-direction:column}.case-visual{min-height:310px}.hero-actions .btn{width:100%}}
+  </style>
 </head>
 <body>
+  <div class="topbar"><div class="container"><span><strong>Akash Studio</strong> · Strategic Business & IT Solutions</span><span>Based in Uttar Pradesh, India</span></div></div>
+  <nav class="main-nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand"><img src="logo.png" alt="Akash Studio"></a>
+      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#solutions" onclick="closeMenu()">Solutions</a>
+        <a href="#process" onclick="closeMenu()">Process</a>
+        <a href="#support" onclick="closeMenu()">Support</a>
+        <a href="service-saas.html" onclick="closeMenu()">SaaS Audit</a>
+        <button onclick="openConsultation();closeMenu()" class="nav-cta btn">Book a consultation</button>
+      </div>
+    </div>
+  </nav>
 
-    <nav class="main-nav">
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Akash Studio Logo">
-        </a>
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#process">How We Work</a>
-            <a href="#reviews">Reviews</a>
-            
-            <a href="#contact" class="btn-contact">Book Consultation</a>
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Strategy + engineering</span>
+          <h1>Build smarter.<br><span>Launch with confidence.</span></h1>
+          <p class="hero-copy">Akash Studio helps businesses turn ideas into practical AI solutions, SaaS products and reliable digital systems — combining business strategy with hands-on engineering.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="openConsultation()">Discuss your project <i class="fas fa-arrow-right"></i></button>
+            <a class="btn btn-ghost" href="#services">Explore services</a>
+          </div>
+          <div class="hero-note"><span><i class="fas fa-check-circle"></i> Practical solutions</span><span><i class="fas fa-check-circle"></i> Full-stack delivery</span><span><i class="fas fa-check-circle"></i> Built for growth</span></div>
         </div>
-    </nav>
-
-    <header class="hero" id="home">
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <h1>Strategic Business &<br>IT Solutions</h1>
-            <p>We transform complex business challenges into streamlined digital success stories.</p>
-            <div class="btn-group">
-                
-                <a href="https://calendly.com" target="_blank" class="btn-hero">Book Free Discovery Call</a>
-                
-                <a href="#services" class="btn-outline">Explore Services</a>
-            </div>
+        <div class="hero-panel">
+          <div class="panel-top"><div><div class="panel-title">Digital product roadmap</div><div class="status"><i class="fas fa-circle"></i> Ready to plan</div></div><i class="fas fa-layer-group" style="color:#ffc20e"></i></div>
+          <div class="roadmap">
+            <div class="roadmap-item"><div class="roadmap-icon"><i class="fas fa-compass"></i></div><div><strong>Discover</strong><small>Business goals & requirements</small></div></div>
+            <div class="roadmap-item"><div class="roadmap-icon"><i class="fas fa-sitemap"></i></div><div><strong>Design</strong><small>Architecture & user experience</small></div></div>
+            <div class="roadmap-item"><div class="roadmap-icon"><i class="fas fa-code"></i></div><div><strong>Build</strong><small>Product, APIs & integrations</small></div></div>
+            <div class="roadmap-item"><div class="roadmap-icon"><i class="fas fa-rocket"></i></div><div><strong>Launch</strong><small>Deploy, measure & improve</small></div></div>
+          </div>
+          <div class="metric"><span>Approach</span><strong>Outcome first</strong></div>
         </div>
+      </div>
     </header>
 
-    <section id="process">
-        <h2 data-aos="fade-up">How We Work</h2>
-        <div class="process-container">
-            <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon-box"><i class="fas fa-microscope"></i></div>
-                <h3>1. Discovery</h3>
-                <p>We audit your current operations and identify key bottlenecks and opportunities for growth.</p>
-            </div>
-            <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box"><i class="fas fa-drafting-compass"></i></div>
-                <h3>2. Strategy</h3>
-                <p>We build a tailored roadmap combining business logic with the right tech stack.</p>
-            </div>
-            <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box"><i class="fas fa-rocket"></i></div>
-                <h3>3. Execution</h3>
-                <p>We implement the solutions, automate workflows, and train your team for success.</p>
-            </div>
+    <div class="trust"><div class="container trust-row"><span class="trust-label">Core capabilities</span><div class="trust-items"><span><i class="fas fa-brain"></i> AI & automation</span><span><i class="fas fa-window-maximize"></i> SaaS development</span><span><i class="fas fa-server"></i> APIs & backend</span><span><i class="fas fa-chart-line"></i> Digital strategy</span></div></div></div>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">What we do</span><h2>Technology that solves a business problem.</h2><p>From an early product idea to an existing stack that needs improvement, we focus on useful systems rather than technology for its own sake.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon"><i class="fas fa-robot"></i></div><h3>AI & Automation</h3><p>AI assistants, workflow automation and business intelligence designed around your actual processes.</p><a class="learn" href="service-ai.html">Explore AI solutions <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card"><div class="service-icon"><i class="fas fa-search-dollar"></i></div><h3>SaaS & Stack Audits</h3><p>Review software costs, workflows and integrations to reduce waste and create a cleaner digital stack.</p><a class="learn" href="service-audit.html">Explore audits <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card"><div class="service-icon"><i class="fas fa-code"></i></div><h3>Full-stack Product Build</h3><p>Web applications, APIs and SaaS products built with maintainable architecture and a clear delivery path.</p><a class="learn" href="service-build.html">Explore development <i class="fas fa-arrow-right"></i></a></article>
         </div>
+      </div>
     </section>
 
-    <section id="services" style="background-color: #fff;">
-        <h2 data-aos="fade-up">Our Expertise</h2>
-        <div class="services">
-            <a href="service-business.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-briefcase"></i>
-                <h3>Business Consultancy</h3>
-                <p>Strategic planning and operational improvement solutions to unlock your company's full potential.</p>
-                <span class="learn-more">View Case Study ➝</span>
-            </a>
-            <a href="service-it.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-laptop-code"></i>
-                <h3>IT Services & Dev</h3>
-                <p>Custom software, responsive website development, and cloud integration for modern businesses.</p>
-                <span class="learn-more">View Case Study ➝</span>
-            </a>
-            <a href="service-saas.html" class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-search-dollar"></i>
-                <h3>SaaS & Tool Reviews</h3>
-                <p>Expert software recommendations to help you choose the right tools, saving time and money.</p>
-                <span class="learn-more">View Case Study ➝</span>
-            </a>
-            <a href="service-digital.html" class="service-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-rocket"></i>
-                <h3>Digital Transformation</h3>
-                <p>Modernize workflows, automate manual processes, and adopt AI tools to boost efficiency.</p>
-                <span class="learn-more">View Case Study ➝</span>
-            </a>
-        </div>
-    </section>
+    <section id="solutions"><div class="container"><div class="section-head"><span class="eyebrow">Solutions</span><h2>Start with the outcome, not the technology.</h2><p>Choose the business challenge and we can shape the right technical approach around it.</p></div><div class="solution-grid">
+      <div class="solution"><div class="solution-number">01</div><div><h3>Launch a SaaS idea</h3><p>Validate the concept, define an MVP and build the core product without unnecessary complexity.</p></div></div>
+      <div class="solution"><div class="solution-number">02</div><div><h3>Automate repetitive work</h3><p>Identify manual workflows and connect the systems your team already uses.</p></div></div>
+      <div class="solution"><div class="solution-number">03</div><div><h3>Build an AI assistant</h3><p>Create a domain-focused assistant that can answer questions, qualify leads or support internal teams.</p></div></div>
+      <div class="solution"><div class="solution-number">04</div><div><h3>Fix a growing tech stack</h3><p>Audit tools, data flows and architecture before technical debt becomes an expensive bottleneck.</p></div></div>
+    </div></div></section>
 
-    <section class="testimonials" id="reviews">
-        <h2 data-aos="fade-up">Client Success Stories</h2>
-        <div class="testimonial-grid">
-            <div class="testi-card" data-aos="zoom-in-up">
-                <div class="stars">★★★★★</div>
-                <p class="testi-text">"Akash Studio completely revamped our internal workflow. We saved 20+ hours a week thanks to their automation strategy. Highly recommended!"</p>
-                <div class="client-info">
-                    <h4>Rahul Verma</h4>
-                    <span>CEO, TechFlow India</span>
-                </div>
-            </div>
-            
-            <div class="testi-card" data-aos="zoom-in-up" data-aos-delay="100">
-                <div class="stars">★★★★★</div>
-                <p class="testi-text">"Akash Studio transformed our <strong>online booking engine</strong>. Since the update, our <strong>international holiday packages</strong> have seen a 40% increase in inquiries. Best tech partner for travel agencies!"</p>
-                <div class="client-info">
-                    <h4>Vikram Malhotra</h4>
-                    <span style="font-size: 0.9rem; color: #888;">Founder, <a href="https://www.dreamtravels.com" target="_blank" style="color: var(--nav-link-color); text-decoration: underline; font-weight: bold;">Dream Travels World</a></span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="process" class="process"><div class="container"><div class="section-head"><span class="eyebrow" style="color:#ffc20e">How we work</span><h2>Clear steps. No unnecessary complexity.</h2><p>Every engagement starts with understanding the problem and ends with something your business can actually use.</p></div><div class="process-grid">
+      <div class="process-step"><span>01 / DISCOVER</span><h3>Understand the problem</h3><p>Goals, users, workflows, constraints and success criteria.</p></div>
+      <div class="process-step"><span>02 / DESIGN</span><h3>Shape the solution</h3><p>Product scope, architecture and a practical delivery roadmap.</p></div>
+      <div class="process-step"><span>03 / BUILD</span><h3>Engineer the product</h3><p>Frontend, backend, integrations and testing with clean architecture.</p></div>
+      <div class="process-step"><span>04 / IMPROVE</span><h3>Launch & iterate</h3><p>Deploy, measure performance and improve based on real usage.</p></div>
+    </div></div></section>
 
-    <section class="review-section">
-        <h2 data-aos="fade-up">Leave a Review</h2>
-        <p style="margin-bottom: 30px; text-align: center;">Worked with us? Share your experience.</p>
-        <div class="review-form" data-aos="fade-up">
-            <form action="https://formsubmit.co/hello@akashstudio.co.in" method="POST">
-                <input type="hidden" name="_next" value="https://www.akashstudio.co.in/thankyou.html">
-                <input type="hidden" name="_subject" value="New Review Submitted!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="reviewer_name" placeholder="Your Name" required>
-                <select name="rating" required>
-                    <option value="" disabled selected>Select Rating</option>
-                    <option value="5 Stars">★★★★★ (Excellent)</option>
-                    <option value="4 Stars">★★★★☆ (Good)</option>
-                    <option value="3 Stars">★★★☆☆ (Average)</option>
-                    <option value="2 Stars">★★☆☆☆ (Fair)</option>
-                    <option value="1 Star">★☆☆☆☆ (Poor)</option>
-                </select>
-                <textarea name="review_text" rows="4" placeholder="Write your review here..." required></textarea>
-                <button type="submit" class="form-btn">SUBMIT REVIEW</button>
-            </form>
-        </div>
-    </section>
+    <section><div class="container case"><div class="case-visual"><span class="case-badge">Featured capability</span><div><span class="eyebrow" style="color:#ffc20e">AI product engineering</span><h3>From conversation to a working business assistant.</h3></div><div class="case-stat"><div><strong>AI</strong><small>Conversational workflows</small></div><div><strong>API</strong><small>Backend integration</small></div></div></div><div class="case-copy"><span class="eyebrow">Why Akash Studio</span><h2>Strategy and engineering in one conversation.</h2><p>You don't need to coordinate a separate strategist, designer and developer just to get an idea moving. We combine business thinking with practical software delivery.</p><div class="case-points"><div><i class="fas fa-check-circle"></i><p><strong>Business-first thinking</strong><br>We connect technical decisions to the problem they are meant to solve.</p></div><div><i class="fas fa-check-circle"></i><p><strong>Modern engineering</strong><br>React, Node.js, APIs, databases and AI services where they make sense.</p></div><div><i class="fas fa-check-circle"></i><p><strong>Transparent delivery</strong><br>Clear scope, milestones and communication instead of unnecessary complexity.</p></div></div><button class="btn btn-dark" onclick="openConsultation()">Talk about your idea <i class="fas fa-arrow-right"></i></button></div></div></section>
 
-    <section id="about" class="founder-section">
-        <div class="founder-img" data-aos="fade-right">
-            <img src="profile.jpg" alt="Akash Founder">
-        </div>
-        <div class="founder-text" data-aos="fade-left">
-            <h2>Meet The Team</h2>
-            <h3>Driven by Strategy. Powered by Tech.</h3>
-            <p>At Akash Studio, we believe that technology is only as good as the strategy behind it. I founded this agency to bridge the gap between traditional business consultancy and modern software development.</p>
-            <p>Whether you are a startup looking for your first product or an established firm needing digital transformation, we are your partners in growth.</p>
-            <div class="signature">Akash Studio Team</div>
-        </div>
-    </section>
+    <section id="market-pulse" style="background:#f8fafc"><div class="container"><div class="section-head"><span class="eyebrow">Market intelligence</span><h2>Useful context, built into the experience.</h2><p>These existing market cards remain available and can be connected to a live data provider later. Click a card to ask the AI assistant about the topic.</p></div><div class="service-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="service-card" onclick="getMarketInfo('Gold')" style="cursor:pointer"><div class="service-icon"><i class="fas fa-coins"></i></div><h3>Gold</h3><p id="gold-price">Loading...</p><span class="learn">Ask AI about gold <i class="fas fa-arrow-right"></i></span></div>
+      <div class="service-card" onclick="getMarketInfo('Sensex')" style="cursor:pointer"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>BSE Sensex</h3><p id="sensex-price">Loading...</p><span class="learn">Ask AI about markets <i class="fas fa-arrow-right"></i></span></div>
+      <div class="service-card" onclick="getMarketInfo('Tech')" style="cursor:pointer"><div class="service-icon"><i class="fas fa-microchip"></i></div><h3>Tech Index</h3><p id="tech-index">Loading...</p><span class="learn">Ask AI about tech <i class="fas fa-arrow-right"></i></span></div>
+    </div></div></section>
 
-    <section id="contact">
-        <div class="contact-container" data-aos="flip-up">
-            <h2>Start Your Transformation</h2>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Fill out the form below or book a call directly.</p>
-            <form action="https://formsubmit.co/hello@akashstudio.co.in" method="POST">
-                <input type="hidden" name="_next" value="https://www.akashstudio.co.in/thankyou.html">
-                <input type="hidden" name="_subject" value="New Lead from Website!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
-                <button type="submit" class="form-btn">SEND MESSAGE</button>
-            </form>
-        </div>
-    </section>
+    <section id="support" class="support"><div class="container"><div class="section-head"><span class="eyebrow">Client support</span><h2>Need help with an existing project?</h2><p>Use the support form for a technical query or contact the team directly for urgent maintenance.</p></div><div class="support-grid"><div class="support-card"><h3>Create a support ticket</h3><p>Give us enough context to understand the issue and we can follow up with the right next step.</p><form action="https://formsubmit.co/support@akashstudio.co.in" method="POST" class="support-form"><input class="field" type="text" name="ticket_id" placeholder="Reference ID (optional)"><input class="field" type="email" name="email" placeholder="Your email" required><textarea class="field" name="query" placeholder="How can we help?" rows="5" required></textarea><button class="btn btn-primary" type="submit">Submit support request <i class="fas fa-arrow-right"></i></button></form></div><div class="support-card support-info"><div><span class="eyebrow" style="color:#ffc20e">Direct support</span><h3 style="font-size:2rem;margin:16px 0">Let's keep your systems moving.</h3><p>For urgent maintenance, account or project questions, reach the engineering team directly.</p></div><div class="contact-box"><span>Official support email</span><a href="mailto:support@akashstudio.co.in">support@akashstudio.co.in</a></div></div></div></div></section>
 
-    <div class="ai-search-container">
-        <div class="ai-search-bar">
-            <i class="fas fa-search" style="color:#888; margin-right:10px;"></i>
-            <input type="text" id="aiInput" placeholder="Ask us: How much does a consultation cost?">
-            <div class="ai-send-btn" onclick="sendInquiry()"><i class="fas fa-paper-plane"></i></div>
-        </div>
-    </div>
+    <section class="newsletter"><div class="container newsletter-box"><div><span class="eyebrow">Strategic insights</span><h2 style="margin-top:12px">Useful ideas. No noise.</h2><p>Get occasional updates on AI, SaaS and practical digital engineering.</p></div><form action="https://formsubmit.co/hello@akashstudio.co.in" method="POST" class="newsletter-form"><input class="field" type="email" name="email" placeholder="Business email" required><button class="btn btn-dark" type="submit">Subscribe</button></form></div></section>
+  </main>
 
-    <footer>
-        <p>© 2026 Akash Studio. All rights reserved.</p>
-    </footer>
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="Akash Studio"><p>Strategic business and IT solutions for companies building better digital products.</p><div class="socials"><a href="https://www.linkedin.com/in/akash-mishra-a014603a8" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div><div><h4>Services</h4><ul><li><a href="service-ai.html">AI & Automation</a></li><li><a href="service-audit.html">SaaS Audits</a></li><li><a href="service-build.html">Product Development</a></li></ul></div><div><h4>Company</h4><ul><li><a href="#solutions">Solutions</a></li><li><a href="#process">Process</a></li><li><a href="#support">Support</a></li></ul></div><div><h4>Contact</h4><ul><li>Noida, Uttar Pradesh, India</li><li><a href="mailto:hello@akashstudio.co.in">hello@akashstudio.co.in</a></li><li><a href="mailto:support@akashstudio.co.in">support@akashstudio.co.in</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Akash Studio. All rights reserved.</span><span>Strategic Business & IT Solutions</span></div></div></footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, offset: 100 });
-        function sendInquiry() {
-            const input = document.getElementById('aiInput').value;
-            if(input.trim() === "") { alert("Please type a question first!"); return; }
-            const subject = "Quick Question from Website";
-            const body = "Hi Akash Studio, I have a question: " + input;
-            window.location.href = `mailto:hello@akashstudio.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            document.getElementById('aiInput').value = "";
-        }
-        document.getElementById('aiInput').addEventListener("keypress", function(event) {
-            if (event.key === "Enter") { sendInquiry(); }
-        });
-    </script>
+  <div id="consultationModal" aria-hidden="true"><div class="modal-content"><button class="modal-close" onclick="closeConsultation()" aria-label="Close">&times;</button><span class="eyebrow">Start a conversation</span><h2>Let's understand your project.</h2><p>Share a little context and we'll use it to shape the first conversation.</p><form action="https://formsubmit.co/hello@akashstudio.co.in" method="POST" class="modal-form"><input type="text" name="name" placeholder="Full name" required class="support-input"><input type="email" name="email" placeholder="Business email" required class="support-input"><select name="service" class="support-input"><option>AI & Automation</option><option>SaaS Audit</option><option>Custom SaaS Build</option><option>Other / Not sure yet</option></select><textarea name="details" placeholder="What are you trying to build or improve?" rows="5" class="support-input"></textarea><button type="submit" class="btn btn-dark">Request a consultation <i class="fas fa-arrow-right"></i></button></form></div></div>
 
+  <button id="bot-trigger" onclick="toggleBot()" aria-label="Open Akash Studio AI"><i class="fas fa-comment-dots"></i></button>
+  <div id="bot-window" role="dialog" aria-label="Akash Studio AI assistant"><div class="bot-head"><div><strong>Akash Studio AI</strong><small>Product & technology assistant</small></div><span class="bot-close" onclick="toggleBot()">&times;</span></div><div id="bot-messages" class="bot-messages"></div><div class="bot-input-row"><input type="text" id="botInput" placeholder="Ask about AI, SaaS or your project..."><button onclick="handleBotSend()">Send</button></div></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

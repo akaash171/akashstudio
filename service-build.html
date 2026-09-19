@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack SaaS Build | Akash Studio Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FFC20E;
+            --navy: #002A50;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --code-bg: #1e293b;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.7; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        
+        /* HEADER */
+        .header { text-align: left; margin-bottom: 60px; border-left: 10px solid var(--navy); padding-left: 30px; }
+        .header i { font-size: 3rem; color: var(--navy); margin-bottom: 20px; }
+        h1 { font-size: 3.2rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+        .tagline { color: var(--navy); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; }
+
+        /* ENGINEERING CARD */
+        .content-card { background: white; padding: 45px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        h2 { color: var(--navy); margin-bottom: 25px; font-size: 2rem; font-weight: 800; }
+        p { margin-bottom: 20px; color: #475569; font-size: 1.1rem; }
+
+        /* TECH STACK VISUAL */
+        .tech-stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .tech-pill { background: var(--code-bg); color: #cbd5e1; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 12px; font-weight: 600; }
+        .tech-pill i { color: var(--primary); }
+
+        /* DELIVERY PROCESS */
+        .deliverables { list-style: none; margin-top: 30px; }
+        .deliverables li { padding: 15px 0; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 15px; }
+        .deliverables li i { color: #10b981; }
+
+        /* BACK BUTTON */
+        .btn-back { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); text-decoration: none; font-weight: 700; transition: 0.3s; margin-bottom: 40px; }
+        .btn-back:hover { color: var(--primary); }
+
+        @media(max-width: 768px) { h1 { font-size: 2.2rem; } .header { border-left-width: 6px; padding-left: 20px; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="btn-back"><i class="fas fa-long-arrow-alt-left"></i> Return to Studio</a>
+
+        <div class="header">
+            <i class="fas fa-laptop-code"></i>
+            <h1>Full-Stack SaaS Build</h1>
+            <p class="tagline">Scalable Engineering for Modern Business</p>
+        </div>
+
+        <div class="content-card">
+            <h2>Turning Vision into Code</h2>
+            <p>At Akash Studio, we don't just build websites; we engineer scalable SaaS products. Our approach combines robust **Node.js** backends with dynamic **React** frontends to create tools that are fast, secure, and ready for market.</p>
+            
+            <p>Whether you're launching a Minimum Viable Product (MVP) or scaling an enterprise dashboard, our engineering standards ensure high performance and clean code architecture.</p>
+
+            <div class="tech-stack">
+                <div class="tech-pill"><i class="fab fa-node-js"></i> Node.js & Express</div>
+                <div class="tech-pill"><i class="fab fa-react"></i> React.js</div>
+                <div class="tech-pill"><i class="fas fa-database"></i> PostgreSQL / MongoDB</div>
+                <div class="tech-pill"><i class="fas fa-cloud"></i> AWS / Azure Deploy</div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: var(--navy);">Our Engineering Promise:</h3>
+            <ul class="deliverables">
+                <li><i class="fas fa-check-circle"></i> <strong>Clean Code:</strong> Maintainable, documented, and modular architecture.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Security First:</strong> End-to-end encryption and secure authentication protocols.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>SEO Optimized:</strong> Built-in performance tuning for maximum search visibility.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Scalability:</strong> Infrastructure designed to handle growth from day one.</li>
+            </ul>
+        </div>
+
+        <div style="text-align:center; padding: 40px; background: var(--navy); border-radius: 20px; color: white;">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Ready to Start Your Build?</h3>
+            <p style="opacity: 0.8;">Let's discuss your technical requirements and build a product that stands out.</p>
+        </div>
+    </div>
+
+</body>
+</html>

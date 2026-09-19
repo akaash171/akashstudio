@@ -1,0 +1,18 @@
+{
+  "name": "akash-bot-server",
+  "version": "1.0.0",
+  "description": "AI Backend for Akash Studio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "groq-sdk": "^1.1.2",
+    "mongoose": "^8.24.1",
+    "openai": "^4.0.0"
+  }
+}
